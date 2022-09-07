@@ -1,0 +1,743 @@
+% Options for packages loaded elsewhere
+\PassOptionsToPackage{unicode}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+%
+\documentclass[
+]{article}
+\usepackage{amsmath,amssymb}
+\usepackage{lmodern}
+\usepackage{iftex}
+\ifPDFTeX
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{textcomp} % provide euro and other symbols
+\else % if luatex or xetex
+  \usepackage{unicode-math}
+  \defaultfontfeatures{Scale=MatchLowercase}
+  \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+\fi
+% Use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\IfFileExists{microtype.sty}{% use microtype if available
+  \usepackage[]{microtype}
+  \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\makeatletter
+\@ifundefined{KOMAClassName}{% if non-KOMA class
+  \IfFileExists{parskip.sty}{%
+    \usepackage{parskip}
+  }{% else
+    \setlength{\parindent}{0pt}
+    \setlength{\parskip}{6pt plus 2pt minus 1pt}}
+}{% if KOMA class
+  \KOMAoptions{parskip=half}}
+\makeatother
+\usepackage{xcolor}
+\usepackage[margin=1in]{geometry}
+\usepackage{color}
+\usepackage{fancyvrb}
+\newcommand{\VerbBar}{|}
+\newcommand{\VERB}{\Verb[commandchars=\\\{\}]}
+\DefineVerbatimEnvironment{Highlighting}{Verbatim}{commandchars=\\\{\}}
+% Add ',fontsize=\small' for more characters per line
+\usepackage{framed}
+\definecolor{shadecolor}{RGB}{248,248,248}
+\newenvironment{Shaded}{\begin{snugshade}}{\end{snugshade}}
+\newcommand{\AlertTok}[1]{\textcolor[rgb]{0.94,0.16,0.16}{#1}}
+\newcommand{\AnnotationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\AttributeTok}[1]{\textcolor[rgb]{0.77,0.63,0.00}{#1}}
+\newcommand{\BaseNTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\BuiltInTok}[1]{#1}
+\newcommand{\CharTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\CommentTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textit{#1}}}
+\newcommand{\CommentVarTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\ConstantTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\ControlFlowTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{\textbf{#1}}}
+\newcommand{\DataTypeTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{#1}}
+\newcommand{\DecValTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\DocumentationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\ErrorTok}[1]{\textcolor[rgb]{0.64,0.00,0.00}{\textbf{#1}}}
+\newcommand{\ExtensionTok}[1]{#1}
+\newcommand{\FloatTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\FunctionTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\ImportTok}[1]{#1}
+\newcommand{\InformationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\KeywordTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{\textbf{#1}}}
+\newcommand{\NormalTok}[1]{#1}
+\newcommand{\OperatorTok}[1]{\textcolor[rgb]{0.81,0.36,0.00}{\textbf{#1}}}
+\newcommand{\OtherTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{#1}}
+\newcommand{\PreprocessorTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textit{#1}}}
+\newcommand{\RegionMarkerTok}[1]{#1}
+\newcommand{\SpecialCharTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\SpecialStringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\StringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\VariableTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\VerbatimStringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\WarningTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\usepackage{graphicx}
+\makeatletter
+\def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth\else\Gin@nat@width\fi}
+\def\maxheight{\ifdim\Gin@nat@height>\textheight\textheight\else\Gin@nat@height\fi}
+\makeatother
+% Scale images if necessary, so that they will not overflow the page
+% margins by default, and it is still possible to overwrite the defaults
+% using explicit options in \includegraphics[width, height, ...]{}
+\setkeys{Gin}{width=\maxwidth,height=\maxheight,keepaspectratio}
+% Set default figure placement to htbp
+\makeatletter
+\def\fps@figure{htbp}
+\makeatother
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\setcounter{secnumdepth}{-\maxdimen} % remove section numbering
+\ifLuaTeX
+  \usepackage{selnolig}  % disable illegal ligatures
+\fi
+\IfFileExists{bookmark.sty}{\usepackage{bookmark}}{\usepackage{hyperref}}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\urlstyle{same} % disable monospaced font for URLs
+\hypersetup{
+  pdftitle={Entrega1ercorte},
+  pdfauthor={Erik Castillo-Nicolas Cordoba - Daniel Caicedo},
+  hidelinks,
+  pdfcreator={LaTeX via pandoc}}
+
+\title{Entrega1ercorte}
+\author{Erik Castillo-Nicolas Cordoba - Daniel Caicedo}
+\date{2022-09-05}
+
+\begin{document}
+\maketitle
+
+En este informe desarrollaremos los classwork correspondientes al primer
+corte de la materia electiva del area electronica.
+
+Inicialmente procedemos a llamar las librerias correspondientes donde se
+encuentran los dataframes para consultar la informacion propuesta en el
+ejercicio.
+
+Numeros del 1 al 100:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\DecValTok{1}\SpecialCharTok{:}\DecValTok{100}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##   [1]   1   2   3   4   5   6   7   8   9  10  11  12  13  14  15  16  17  18
+##  [19]  19  20  21  22  23  24  25  26  27  28  29  30  31  32  33  34  35  36
+##  [37]  37  38  39  40  41  42  43  44  45  46  47  48  49  50  51  52  53  54
+##  [55]  55  56  57  58  59  60  61  62  63  64  65  66  67  68  69  70  71  72
+##  [73]  73  74  75  76  77  78  79  80  81  82  83  84  85  86  87  88  89  90
+##  [91]  91  92  93  94  95  96  97  98  99 100
+\end{verbatim}
+
+para imprimir los numeros del 1 al 100 debemos ubicar solo este comando
+y ejecutarlo y si queremos realizarlo en matriz podemos ponerlo asi:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{x}\OtherTok{\textless{}{-}}\FunctionTok{c}\NormalTok{(}\DecValTok{1}\SpecialCharTok{:}\DecValTok{100}\NormalTok{)}
+\FunctionTok{print}\NormalTok{ (x)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##   [1]   1   2   3   4   5   6   7   8   9  10  11  12  13  14  15  16  17  18
+##  [19]  19  20  21  22  23  24  25  26  27  28  29  30  31  32  33  34  35  36
+##  [37]  37  38  39  40  41  42  43  44  45  46  47  48  49  50  51  52  53  54
+##  [55]  55  56  57  58  59  60  61  62  63  64  65  66  67  68  69  70  71  72
+##  [73]  73  74  75  76  77  78  79  80  81  82  83  84  85  86  87  88  89  90
+##  [91]  91  92  93  94  95  96  97  98  99 100
+\end{verbatim}
+
+En este punto inician los classwork: Para iniciar con el trabajo sobre
+los dataframes del aeropuerto, vuelos, y demas debemos llamar las
+librerias correspondientes:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{library}\NormalTok{(nycflights13)}
+\FunctionTok{library}\NormalTok{(tidyverse)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## -- Attaching packages --------------------------------------- tidyverse 1.3.2 --
+## v ggplot2 3.3.6     v purrr   0.3.4
+## v tibble  3.1.8     v dplyr   1.0.9
+## v tidyr   1.2.0     v stringr 1.4.0
+## v readr   2.1.2     v forcats 0.5.2
+## -- Conflicts ------------------------------------------ tidyverse_conflicts() --
+## x dplyr::filter() masks stats::filter()
+## x dplyr::lag()    masks stats::lag()
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{nycflights13\_al }\OtherTok{\textless{}{-}}\NormalTok{ nycflights13}\SpecialCharTok{::}\NormalTok{airlines }\CommentTok{\#aerolineas}
+\NormalTok{nycflights13\_ap }\OtherTok{\textless{}{-}}\NormalTok{ nycflights13}\SpecialCharTok{::}\NormalTok{airports }\CommentTok{\#aeropuertos}
+\NormalTok{nycflights13\_vu }\OtherTok{\textless{}{-}}\NormalTok{ nycflights13}\SpecialCharTok{::}\NormalTok{flights }\CommentTok{\#vuelos}
+\NormalTok{nycflights13\_av }\OtherTok{\textless{}{-}}\NormalTok{ nycflights13}\SpecialCharTok{::}\NormalTok{planes }\CommentTok{\#aviones}
+\NormalTok{nycflights13\_cl }\OtherTok{\textless{}{-}}\NormalTok{ nycflights13}\SpecialCharTok{::}\NormalTok{weather }\CommentTok{\#clima}
+
+\FunctionTok{colnames}\NormalTok{(nycflights13\_vu)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##  [1] "year"           "month"          "day"            "dep_time"      
+##  [5] "sched_dep_time" "dep_delay"      "arr_time"       "sched_arr_time"
+##  [9] "arr_delay"      "carrier"        "flight"         "tailnum"       
+## [13] "origin"         "dest"           "air_time"       "distance"      
+## [17] "hour"           "minute"         "time_hour"
+\end{verbatim}
+
+Se asignan toods los dataframes que componen la libreria, aunque
+particularmente trabajaremos dos o tres de ellos, aun asi contaremos con
+toda la informacion en nuestros dataframes locales al realizar esta
+operacion
+
+\hypertarget{uso-de-los-filters}{%
+\subsection{USO DE LOS FILTERS}\label{uso-de-los-filters}}
+
+Para el primer ejercicio nos solicita encontrar los aviones que:
+
+Tuvo un retraso de llegada de dos o más horas.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\#Ejercicio 5.2.4}
+\StringTok{\textquotesingle{}5.2.4{-}1.1\textquotesingle{}}\OtherTok{\textless{}{-}}\FunctionTok{filter}\NormalTok{ (nycflights13\_vu, arr\_delay }\SpecialCharTok{\textgreater{}} \StringTok{\textquotesingle{}2\textquotesingle{}}\NormalTok{ )}
+\end{Highlighting}
+\end{Shaded}
+
+Voló a Houston ( IAHo HOU)
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\StringTok{\textquotesingle{}5.2.4{-}1.2\textquotesingle{}}\OtherTok{\textless{}{-}}\FunctionTok{filter}\NormalTok{ (nycflights13\_vu, dest }\SpecialCharTok{==} \StringTok{"IAH"}\SpecialCharTok{|}\NormalTok{ dest }\SpecialCharTok{==}\StringTok{"HOU"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+Fueron operados por United, American o Delta
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\StringTok{\textquotesingle{}5.2.4{-}1.3\textquotesingle{}}\OtherTok{\textless{}{-}}\FunctionTok{filter}\NormalTok{ (nycflights13\_vu, carrier }\SpecialCharTok{==} \StringTok{"AA"}\SpecialCharTok{|}\NormalTok{ dest }\SpecialCharTok{==}\StringTok{"UA"} \SpecialCharTok{|}\NormalTok{ dest }\SpecialCharTok{==}\StringTok{"DL"}\NormalTok{) }\CommentTok{\#primero se consulta la tabla de aerolineas para sacar las siglas de aerolinea}
+\end{Highlighting}
+\end{Shaded}
+
+Salida en verano (julio, agosto y septiembre)
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\StringTok{\textquotesingle{}5.2.4{-}1.4\textquotesingle{}}\OtherTok{\textless{}{-}}\FunctionTok{filter}\NormalTok{ (nycflights13\_vu, month}\SpecialCharTok{==}\DecValTok{7}\SpecialCharTok{|}\NormalTok{ month}\SpecialCharTok{==}\DecValTok{8} \SpecialCharTok{|}\NormalTok{ month}\SpecialCharTok{==}\DecValTok{9}\NormalTok{) }
+\end{Highlighting}
+\end{Shaded}
+
+Llegó más de dos horas tarde, pero no se fue tarde
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\StringTok{\textquotesingle{}5.2.4{-}1.5\textquotesingle{}}\OtherTok{\textless{}{-}}\FunctionTok{filter}\NormalTok{ (nycflights13\_vu, arr\_delay }\SpecialCharTok{\textgreater{}} \DecValTok{2} \SpecialCharTok{\&}\NormalTok{ dep\_delay }\SpecialCharTok{\textless{}=} \DecValTok{0}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+Se retrasaron al menos una hora, pero recuperaron más de 30 minutos en
+vuelo
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\StringTok{\textquotesingle{}5.2.4{-}1.6\textquotesingle{}}\OtherTok{\textless{}{-}}\FunctionTok{filter}\NormalTok{ (nycflights13\_vu, dep\_delay }\SpecialCharTok{\textgreater{}=} \DecValTok{1} \SpecialCharTok{\&}\NormalTok{ arr\_delay }\SpecialCharTok{\textless{}=} \FloatTok{0.5}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+Salida entre la medianoche y las 6 a. m. (incluidas)
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\StringTok{\textquotesingle{}5.2.4{-}1.7\textquotesingle{}}\OtherTok{\textless{}{-}}\FunctionTok{filter}\NormalTok{ (nycflights13\_vu, dep\_time }\SpecialCharTok{\textless{}=} \DecValTok{600}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+para esta primera parte realizamos el uso de filters con rangos asinados
+a traves de igualacion o mayor que, pero que sucederia si
+implementaramos los mismo codigos con un filtro entre rangos:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\#con operador between}
+\FunctionTok{filter}\NormalTok{ (nycflights13\_vu,}\FunctionTok{between}\NormalTok{( arr\_delay , }\StringTok{\textquotesingle{}2\textquotesingle{}}\NormalTok{ ,}\StringTok{\textquotesingle{}200\textquotesingle{}}\NormalTok{))}\DocumentationTok{\#\# para vuelos retrasados entre 2 y 200 hrs}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## # A tibble: 125,129 x 19
+##     year month   day dep_time sched_de~1 dep_d~2 arr_t~3 sched~4 arr_d~5 carrier
+##    <int> <int> <int>    <int>      <int>   <dbl>   <int>   <int>   <dbl> <chr>  
+##  1  2013     1     1      517        515       2     830     819      11 UA     
+##  2  2013     1     1      533        529       4     850     830      20 UA     
+##  3  2013     1     1      542        540       2     923     850      33 AA     
+##  4  2013     1     1      554        558      -4     740     728      12 UA     
+##  5  2013     1     1      555        600      -5     913     854      19 B6     
+##  6  2013     1     1      558        600      -2     753     745       8 AA     
+##  7  2013     1     1      558        600      -2     924     917       7 UA     
+##  8  2013     1     1      559        600      -1     941     910      31 AA     
+##  9  2013     1     1      600        600       0     837     825      12 MQ     
+## 10  2013     1     1      602        605      -3     821     805      16 MQ     
+## # ... with 125,119 more rows, 9 more variables: flight <int>, tailnum <chr>,
+## #   origin <chr>, dest <chr>, air_time <dbl>, distance <dbl>, hour <dbl>,
+## #   minute <dbl>, time_hour <dttm>, and abbreviated variable names
+## #   1: sched_dep_time, 2: dep_delay, 3: arr_time, 4: sched_arr_time,
+## #   5: arr_delay
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{filter}\NormalTok{ (nycflights13\_vu,}\FunctionTok{between}\NormalTok{(dest , }\StringTok{"IAH"}\NormalTok{ , }\StringTok{"HOU"}\NormalTok{ ))}\CommentTok{\# en este caso por el tipo de dato arrojara un error de coercion}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## Warning in between(dest, "IAH", "HOU"): NAs introducidos por coerción
+
+## Warning in between(dest, "IAH", "HOU"): NAs introducidos por coerción
+
+## Warning in between(dest, "IAH", "HOU"): NAs introducidos por coerción
+\end{verbatim}
+
+\begin{verbatim}
+## # A tibble: 0 x 19
+## # ... with 19 variables: year <int>, month <int>, day <int>, dep_time <int>,
+## #   sched_dep_time <int>, dep_delay <dbl>, arr_time <int>,
+## #   sched_arr_time <int>, arr_delay <dbl>, carrier <chr>, flight <int>,
+## #   tailnum <chr>, origin <chr>, dest <chr>, air_time <dbl>, distance <dbl>,
+## #   hour <dbl>, minute <dbl>, time_hour <dttm>
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\#filter (nycflights13\_vu,between(carrier , "AA","UA","DL"))\# al trabajar con cadenas de caracteres se presenta el inconveniente de normalización}
+\FunctionTok{filter}\NormalTok{ (nycflights13\_vu,}\FunctionTok{between}\NormalTok{(month,}\DecValTok{7}\NormalTok{,}\DecValTok{9}\NormalTok{))}\CommentTok{\#para el tema de meses años o dias, es perfecto el uso por que between representa un rango}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## # A tibble: 86,326 x 19
+##     year month   day dep_time sched_de~1 dep_d~2 arr_t~3 sched~4 arr_d~5 carrier
+##    <int> <int> <int>    <int>      <int>   <dbl>   <int>   <int>   <dbl> <chr>  
+##  1  2013     7     1        1       2029     212     236    2359     157 B6     
+##  2  2013     7     1        2       2359       3     344     344       0 B6     
+##  3  2013     7     1       29       2245     104     151       1     110 B6     
+##  4  2013     7     1       43       2130     193     322      14     188 B6     
+##  5  2013     7     1       44       2150     174     300     100     120 AA     
+##  6  2013     7     1       46       2051     235     304    2358     186 B6     
+##  7  2013     7     1       48       2001     287     308    2305     243 VX     
+##  8  2013     7     1       58       2155     183     335      43     172 B6     
+##  9  2013     7     1      100       2146     194     327      30     177 B6     
+## 10  2013     7     1      100       2245     135     337     135     122 B6     
+## # ... with 86,316 more rows, 9 more variables: flight <int>, tailnum <chr>,
+## #   origin <chr>, dest <chr>, air_time <dbl>, distance <dbl>, hour <dbl>,
+## #   minute <dbl>, time_hour <dttm>, and abbreviated variable names
+## #   1: sched_dep_time, 2: dep_delay, 3: arr_time, 4: sched_arr_time,
+## #   5: arr_delay
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{filter}\NormalTok{ (nycflights13\_vu,}\FunctionTok{between}\NormalTok{(arr\_delay, }\StringTok{\textquotesingle{}2\textquotesingle{}}\NormalTok{,}\StringTok{\textquotesingle{}200\textquotesingle{}}\NormalTok{) }\SpecialCharTok{\&}\NormalTok{ dep\_delay}\SpecialCharTok{\textless{}=}\StringTok{\textquotesingle{}0\textquotesingle{}}\NormalTok{)}\CommentTok{\#podemos usarlo como combinacion entre un valor exacto o con parametros y una comparacion con rangos}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## # A tibble: 37,527 x 19
+##     year month   day dep_time sched_de~1 dep_d~2 arr_t~3 sched~4 arr_d~5 carrier
+##    <int> <int> <int>    <int>      <int>   <dbl>   <int>   <int>   <dbl> <chr>  
+##  1  2013     1     1      554        558      -4     740     728      12 UA     
+##  2  2013     1     1      555        600      -5     913     854      19 B6     
+##  3  2013     1     1      558        600      -2     753     745       8 AA     
+##  4  2013     1     1      558        600      -2     924     917       7 UA     
+##  5  2013     1     1      559        600      -1     941     910      31 AA     
+##  6  2013     1     1      600        600       0     837     825      12 MQ     
+##  7  2013     1     1      602        605      -3     821     805      16 MQ     
+##  8  2013     1     1      622        630      -8    1017    1014       3 US     
+##  9  2013     1     1      624        630      -6     909     840      29 EV     
+## 10  2013     1     1      624        630      -6     840     830      10 MQ     
+## # ... with 37,517 more rows, 9 more variables: flight <int>, tailnum <chr>,
+## #   origin <chr>, dest <chr>, air_time <dbl>, distance <dbl>, hour <dbl>,
+## #   minute <dbl>, time_hour <dttm>, and abbreviated variable names
+## #   1: sched_dep_time, 2: dep_delay, 3: arr_time, 4: sched_arr_time,
+## #   5: arr_delay
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{filter}\NormalTok{ (nycflights13\_vu, }\FunctionTok{between}\NormalTok{( dep\_delay, }\StringTok{\textquotesingle{}1\textquotesingle{}}\NormalTok{,}\StringTok{\textquotesingle{}100\textquotesingle{}}\NormalTok{) }\SpecialCharTok{\&} \FunctionTok{between}\NormalTok{ (arr\_delay,}\DecValTok{0}\NormalTok{, }\FloatTok{0.5}\NormalTok{)) }\CommentTok{\# mismas combinaciones para rangos de enteros}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## # A tibble: 1,921 x 19
+##     year month   day dep_time sched_de~1 dep_d~2 arr_t~3 sched~4 arr_d~5 carrier
+##    <int> <int> <int>    <int>      <int>   <dbl>   <int>   <int>   <dbl> <chr>  
+##  1  2013     1     1     1240       1235       5    1415    1415       0 MQ     
+##  2  2013     1     1     1832       1828       4    2144    2144       0 UA     
+##  3  2013     1     1     1856       1855       1    2142    2142       0 DL     
+##  4  2013     1     2      730        715      15    1206    1206       0 B6     
+##  5  2013     1     2      954        945       9    1115    1115       0 WN     
+##  6  2013     1     2     1023       1020       3    1330    1330       0 AA     
+##  7  2013     1     2     1031       1015      16    1135    1135       0 UA     
+##  8  2013     1     2     1526       1518       8    1823    1823       0 B6     
+##  9  2013     1     2     1920       1910      10    2055    2055       0 MQ     
+## 10  2013     1     2     1937       1900      37    2301    2301       0 DL     
+## # ... with 1,911 more rows, 9 more variables: flight <int>, tailnum <chr>,
+## #   origin <chr>, dest <chr>, air_time <dbl>, distance <dbl>, hour <dbl>,
+## #   minute <dbl>, time_hour <dttm>, and abbreviated variable names
+## #   1: sched_dep_time, 2: dep_delay, 3: arr_time, 4: sched_arr_time,
+## #   5: arr_delay
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{filter}\NormalTok{ (nycflights13\_vu,}\FunctionTok{between}\NormalTok{( dep\_time , }\StringTok{\textquotesingle{}0\textquotesingle{}}\NormalTok{ , }\StringTok{\textquotesingle{}600\textquotesingle{}}\NormalTok{))}\CommentTok{\#podemos asumir que las 12 de la media noche son 00:00 y al ser enteros lo manejamos como 0}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## # A tibble: 9,344 x 19
+##     year month   day dep_time sched_de~1 dep_d~2 arr_t~3 sched~4 arr_d~5 carrier
+##    <int> <int> <int>    <int>      <int>   <dbl>   <int>   <int>   <dbl> <chr>  
+##  1  2013     1     1      517        515       2     830     819      11 UA     
+##  2  2013     1     1      533        529       4     850     830      20 UA     
+##  3  2013     1     1      542        540       2     923     850      33 AA     
+##  4  2013     1     1      544        545      -1    1004    1022     -18 B6     
+##  5  2013     1     1      554        600      -6     812     837     -25 DL     
+##  6  2013     1     1      554        558      -4     740     728      12 UA     
+##  7  2013     1     1      555        600      -5     913     854      19 B6     
+##  8  2013     1     1      557        600      -3     709     723     -14 EV     
+##  9  2013     1     1      557        600      -3     838     846      -8 B6     
+## 10  2013     1     1      558        600      -2     753     745       8 AA     
+## # ... with 9,334 more rows, 9 more variables: flight <int>, tailnum <chr>,
+## #   origin <chr>, dest <chr>, air_time <dbl>, distance <dbl>, hour <dbl>,
+## #   minute <dbl>, time_hour <dttm>, and abbreviated variable names
+## #   1: sched_dep_time, 2: dep_delay, 3: arr_time, 4: sched_arr_time,
+## #   5: arr_delay
+\end{verbatim}
+
+Realizamos las mismas consultas con la funcion filter, pero anidamos la
+funcion between, nos percatamos que unicamente funcionan los rangos para
+los numeros, en cuanto a caracteres o letras between no es el filtro
+correcto para dichas sentencias.
+
+\hypertarget{arrange}{%
+\subsection{Arrange}\label{arrange}}
+
+\#5.3.1
+
+llamamos nuevamente la lista donde se encuentran los dataframes y
+tydiverse para realizar nuestras consultas.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{library}\NormalTok{(nycflights13)}
+\FunctionTok{library}\NormalTok{(tidyverse)}
+\end{Highlighting}
+\end{Shaded}
+
+Debemos entender que informacion tiene el dataframe, para asi mismo
+saber por que columnas y filas organizar, por ende implementamos la
+funcion de colnames, para saber el orden del dataframe.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{colnames}\NormalTok{(nycflights13\_vu)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##  [1] "year"           "month"          "day"            "dep_time"      
+##  [5] "sched_dep_time" "dep_delay"      "arr_time"       "sched_arr_time"
+##  [9] "arr_delay"      "carrier"        "flight"         "tailnum"       
+## [13] "origin"         "dest"           "air_time"       "distance"      
+## [17] "hour"           "minute"         "time_hour"
+\end{verbatim}
+
+Esta sentencia nos entrega los encabezados de el dataframe
+
+5.3.1 Ejercicios ¿Cómo podría utilizar arrange()para ordenar todos los
+valores que faltan al principio? (Sugerencia: use is.na()).
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\StringTok{\textquotesingle{}5.3.1.1\textquotesingle{}}\OtherTok{\textless{}{-}}\NormalTok{ nycflights13\_vu}\SpecialCharTok{\%\textgreater{}\%}
+\FunctionTok{arrange}\NormalTok{(}\FunctionTok{desc}\NormalTok{(}\FunctionTok{is.na}\NormalTok{(dep\_time))) }\CommentTok{\# en esta ocasion se organiza por tiempos de salida en NA}
+\end{Highlighting}
+\end{Shaded}
+
+Ordenar flightspara encontrar los vuelos más retrasados. Encuentra los
+vuelos que salieron antes.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\StringTok{\textquotesingle{}5.3.1.2\textquotesingle{}}\OtherTok{\textless{}{-}}\NormalTok{ nycflights13\_vu}\SpecialCharTok{\%\textgreater{}\%}
+\FunctionTok{arrange}\NormalTok{ (dep\_delay)}\CommentTok{\# }
+\end{Highlighting}
+\end{Shaded}
+
+implementamos el la funcion para ver que vuelos salieron mas horas de
+antelacion, y al final encontraremos los retrasados, a partir del
+retraso en las llegadas
+
+Ordenar flightspara encontrar los vuelos más rápidos (velocidad más
+alta).
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\StringTok{\textquotesingle{}5.3.1.3\textquotesingle{}}\OtherTok{\textless{}{-}}\NormalTok{ nycflights13\_vu}\SpecialCharTok{\%\textgreater{}\%} \CommentTok{\#nos organiza en la parte superior los mas veloces, y al final los menos}
+  \FunctionTok{arrange}\NormalTok{ (air\_time}\SpecialCharTok{*}\NormalTok{distance)}
+\end{Highlighting}
+\end{Shaded}
+
+¿Qué vuelos viajaron más lejos? ¿Cuál viajó menos?
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\StringTok{\textquotesingle{}5.3.1.4\textquotesingle{}}\OtherTok{\textless{}{-}}\NormalTok{ nycflights13\_vu}\SpecialCharTok{\%\textgreater{}\%}\CommentTok{\#¿Qué vuelos viajaron más lejos? ¿Cuál viajó menos?}
+  \FunctionTok{arrange}\NormalTok{ ((distance}\SpecialCharTok{/}\NormalTok{air\_time)}\SpecialCharTok{*}\DecValTok{60}\NormalTok{)}
+\StringTok{\textquotesingle{}5.3.1.4{-}2 menos\textquotesingle{}} \OtherTok{\textless{}{-}}\NormalTok{ nycflights13\_vu}\SpecialCharTok{\%\textgreater{}\%}
+  \FunctionTok{group\_by}\NormalTok{(distance)}\SpecialCharTok{\%\textgreater{}\%}
+\FunctionTok{transmute}\NormalTok{(carrier,flight,tailnum,}\AttributeTok{velocidad\_promedio =}\NormalTok{ (distance}\SpecialCharTok{/}\NormalTok{air\_time)}\SpecialCharTok{*}\DecValTok{60}\NormalTok{)}\SpecialCharTok{\%\textgreater{}\%}
+  \FunctionTok{ungroup}\NormalTok{()}
+\end{Highlighting}
+\end{Shaded}
+
+Aqui implementamos una funcion especial, para poder determinar la
+velocidad promedio y no solo asumir que por distancia y tiempo podiamos
+guiarnos, por ende implementamos transmute.
+
+\hypertarget{funcion-select}{%
+\subsection{FUNCION SELECT}\label{funcion-select}}
+
+¿Qué sucede si incluye el nombre de una variable varias veces en una
+select()llamada?\#5.4.1.3 \#¿Qué hace la any\_of()función? ¿Por qué
+podría ser útil junto con este vector?
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\#vars \textless{}{-} c("year", "month", "day", "dep\_delay", "arr\_delay")\%\textgreater{}\%}
+\CommentTok{\#SELECT ("dep\_delay",any\_of(dep\_delay=\textquotesingle{}na\textquotesingle{}))}
+\end{Highlighting}
+\end{Shaded}
+
+lo que hace es coincidencias, y le dice a motor que coincida una o
+varias veces con cualquiera\_de y se especifica el valor que se requiere
+o el caracter entre comillas.
+
+\#5.4.1.4\#¿Te sorprende el resultado de ejecutar el siguiente código?
+¿Cómo tratan los ayudantes selectos el caso de forma predeterminada?
+¿Cómo se puede cambiar ese valor predeterminado?
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{select}\NormalTok{(flights, }\FunctionTok{contains}\NormalTok{(}\StringTok{"TIME"}\NormalTok{))}\CommentTok{\# en realidad lo que hace es generar un filtro en las columnas que tienen la palabra time como palabra clave}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## # A tibble: 336,776 x 6
+##    dep_time sched_dep_time arr_time sched_arr_time air_time time_hour          
+##       <int>          <int>    <int>          <int>    <dbl> <dttm>             
+##  1      517            515      830            819      227 2013-01-01 05:00:00
+##  2      533            529      850            830      227 2013-01-01 05:00:00
+##  3      542            540      923            850      160 2013-01-01 05:00:00
+##  4      544            545     1004           1022      183 2013-01-01 05:00:00
+##  5      554            600      812            837      116 2013-01-01 06:00:00
+##  6      554            558      740            728      150 2013-01-01 05:00:00
+##  7      555            600      913            854      158 2013-01-01 06:00:00
+##  8      557            600      709            723       53 2013-01-01 06:00:00
+##  9      557            600      838            846      140 2013-01-01 06:00:00
+## 10      558            600      753            745      138 2013-01-01 06:00:00
+## # ... with 336,766 more rows
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{select}\NormalTok{(flights, }\FunctionTok{contains}\NormalTok{(}\StringTok{"dep"}\NormalTok{))}\CommentTok{\#en este caso se usa el filtro para buscar la palabra dep en los encabezados de columnas}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## # A tibble: 336,776 x 3
+##    dep_time sched_dep_time dep_delay
+##       <int>          <int>     <dbl>
+##  1      517            515         2
+##  2      533            529         4
+##  3      542            540         2
+##  4      544            545        -1
+##  5      554            600        -6
+##  6      554            558        -4
+##  7      555            600        -5
+##  8      557            600        -3
+##  9      557            600        -3
+## 10      558            600        -2
+## # ... with 336,766 more rows
+\end{verbatim}
+
+en realidad solo trae una unica fila a pesar de ser llamada 3 veces
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\#\textquotesingle{}5.4.1.2\textquotesingle{}\textless{}{-} nycflights13\_vu\%\textgreater{}\%}
+
+ \CommentTok{\#select(carrier,carrier,carrier,flight,tailnum)\%\textgreater{}\%}
+
+\CommentTok{\#arrange(carrier)}
+\end{Highlighting}
+\end{Shaded}
+
+Aqui implementamos funciones adiciona
+
+\hypertarget{mutate}{%
+\subsection{MUTATE}\label{mutate}}
+
+Ejercicios 5.5.2
+
+Actualmente dep\_time y sched\_dep\_time son convenientes a la vista,
+pero difíciles de calcular porque en realidad no son números continuos.
+Conviértalos a una representación más conveniente de la cantidad de
+minutos desde la medianoche.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\StringTok{\textquotesingle{}5.5.2.1\textquotesingle{}} \OtherTok{\textless{}{-}}\NormalTok{ nycflights13\_vu}\SpecialCharTok{\%\textgreater{}\%}
+\FunctionTok{transmute}\NormalTok{(dep\_time,sched\_dep\_time,}\AttributeTok{dep\_horas =}\NormalTok{(dep\_time }\SpecialCharTok{\%/\%} \DecValTok{100}\NormalTok{), }\AttributeTok{dep\_minutos =}\NormalTok{ (dep\_time }\SpecialCharTok{\%\%} \DecValTok{100}\NormalTok{ ),}\AttributeTok{sched\_horas=}\NormalTok{(sched\_dep\_time}\SpecialCharTok{\%/\%} \DecValTok{100}\NormalTok{),}\AttributeTok{sched\_minutos =}\NormalTok{ (sched\_dep\_time }\SpecialCharTok{\%\%} \DecValTok{100}\NormalTok{ ))}
+\end{Highlighting}
+\end{Shaded}
+
+Comparar air\_timecon arr\_time - dep\_time. Que esperas ver? ¿Que ves?
+¿Qué necesitas hacer para arreglarlo?
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\StringTok{\textquotesingle{}5.5.2.2\textquotesingle{}} \OtherTok{\textless{}{-}}\NormalTok{ nycflights13\_vu}\SpecialCharTok{\%\textgreater{}\%}
+\FunctionTok{select}\NormalTok{(air\_time,arr\_time,dep\_time)}\SpecialCharTok{\%\textgreater{}\%}
+\FunctionTok{group\_by}\NormalTok{(arr\_time)}
+\end{Highlighting}
+\end{Shaded}
+
+en primera medida se ve que el air time esta en minutos, debo
+convertirlo a horas.
+
+procuro dejar todo en horas para que sea mas facil la lectura y el
+calculo correspondiente
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\#transmute(hora\_llegada=(arr\_time/100),hora\_salida=(dep\_time/100),tiempo\_vuelo\_horas=(air\_time/60),arr\_time)\%\textgreater{}\%}
+\CommentTok{\#ungroup\%\textgreater{}\%}
+\CommentTok{\#arrange(arr\_time)}
+\end{Highlighting}
+\end{Shaded}
+
+\hypertarget{sumarise}{%
+\subsection{SUMARISE}\label{sumarise}}
+
+Ejercicios 5.6.7
+
+Haga una lluvia de ideas sobre al menos 5 formas diferentes de evaluar
+las características típicas de retraso de un grupo de vuelos. Considere
+los siguientes escenarios:
+
+\#Un vuelo llega 15 minutos antes el 50\% del tiempo y 15 minutos tarde
+el 50\% del tiempo
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{not\_cancelled \%\textgreater{}\%}
+\NormalTok{  group\_by(year, month, day) \%\textgreater{}\%}
+\NormalTok{  summarise(n\_early = sum(dep\_time)+Tiempo\_adicional)}
+\end{Highlighting}
+\end{Shaded}
+
+teniendo en cuenta que la hora de llegada de los vuelos sera aumentada y
+disminuida en todos los casos implementamos una resta y suma segun
+corresponda de 15 minutos.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\#Tiempo\_adicional\textless{}{-}15}
+\CommentTok{\#not\_cancelled \%\textgreater{}\%}
+\CommentTok{\#  group\_by(year, month, day) \%\textgreater{}\%}
+\CommentTok{\#  summarise(n\_early = sum(dep\_time){-}Tiempo\_adicional)}
+\end{Highlighting}
+\end{Shaded}
+
+Un vuelo siempre llega 10 minutos tarde.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\#\textquotesingle{}10\_TARDE\textquotesingle{}\textless{}{-}not\_cancelled \%\textgreater{}\%}
+\CommentTok{\#  group\_by(year, month, day)\%\textgreater{}\%}
+\CommentTok{\#transmute(flight,tailnum,origin,dest,sched\_arr\_time,hora\_con\_retraso=(sched\_arr\_time + 10))\%\textgreater{}\%}
+\CommentTok{\#ungroup}
+\end{Highlighting}
+\end{Shaded}
+
+Siempre habra un retraso de 10 minutos entonces incrementamos el tiempo
+de llegada estimado, con eso ya sabemos que estara retrasado con
+respecto a la hora dispuesta.
+
+Un vuelo llega 30 minutos antes el 50\% del tiempo y 30 minutos tarde el
+50\% del tiempo.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\#\textquotesingle{}30\_mminutos\textquotesingle{}\textless{}{-}not\_cancelled \%\textgreater{}\%}
+\CommentTok{\#  group\_by(year, month, day)\%\textgreater{}\%}
+\CommentTok{\#  transmute(flight,tailnum,origin,dest,sched\_arr\_time,hora\_adelanto=sched\_arr\_time{-}30,hora\_atraso=sched\_arr\_time+30)\%\textgreater{}\%}
+\CommentTok{\#  transmute(Tiempo\_desviacion=(mean(hora\_atraso{-}hora\_adelanto)))\%\textgreater{}\%}
+\CommentTok{\#  ungroup}
+\end{Highlighting}
+\end{Shaded}
+
+implementamos una funcion donde se contemplen las dos llegadas, una con
+retraso, y la otra con adelanto con respecto al tiempo estimado,
+asumiendo que es el tiempo idoneo de llegada.
+
+\hypertarget{group_by-agrupamientos}{%
+\subsection{GROUP\_BY AGRUPAMIENTOS}\label{group_by-agrupamientos}}
+
+ejercicios 5.7.1
+
+Vuelva a consultar las listas de funciones útiles de mutación y
+filtrado. Describe cómo cambia cada operación cuando la combinas con la
+agrupación.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\#5.7.1 Vuelva a consultar las listas de funciones útiles de mutación y filtrado. Describe cómo cambia cada operación cuando la combinas con la agrupación.}
+\NormalTok{avion\_retraso }\OtherTok{\textless{}{-}}\NormalTok{ nycflights13\_vu}\SpecialCharTok{\%\textgreater{}\%}
+\FunctionTok{arrange}\NormalTok{ (flights,}\FunctionTok{desc}\NormalTok{(dep\_delay))}\SpecialCharTok{\%\textgreater{}\%}
+\FunctionTok{group\_by}\NormalTok{(tailnum)}
+\end{Highlighting}
+\end{Shaded}
+
+Lo que hacemos es organizar el dep\_delay(retraso en salidas) que
+equivale a el retraso con respecto a la salida estimada, y la hora de
+salida y luego agrupamos por el numero en la cola del avion, aqui lo que
+realiza es un ordenamiento a traves de los numeros de la cola del avion
+permitiendonos tener un consolidado de informacion sobre los mismos.
+
+La documentación tanto para el taller como el material academico del
+cual fuimos apoyados fue tomado de:
+
+\href{https://r4ds.had.co.nz/transform.html}{Documentacion para R
+(inglés)}
+
+\href{https://github.com/ErikCastillor/entregar1ercorte}{Repositorio
+Erik}
+
+\end{document}
