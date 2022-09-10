@@ -9,20 +9,21 @@ nycflights13_vu <- nycflights13::flights #vuelos
 nycflights13_av <- nycflights13::planes #aviones
 nycflights13_cl <- nycflights13::weather #clima
 
-num 1:6
-x <- function(num)
-{
-  if num == 1
+opcion <- 1
+retrieve_answer <- function(x){
+  if (x == 1)
   {
     #Ejercicio 5.2.4
-    '5.2.4-1.1'<-filter (nycflights13_vu, arr_delay > '2' )#vuelos retrasados mas de dos horas
+    '5.2.4-1.2'<-filter (nycflights13_vu, arr_delay > '2' )%>%#vuelos retrasados mas de dos horas
+    A
     '5.2.4-1.2'<-filter (nycflights13_vu, dest == "IAH"| dest =="HOU")#vuelos con destino a houston (IAHo HOU)
     '5.2.4-1.3'<-filter (nycflights13_vu, carrier == "AA"| dest =="UA" | dest =="DL") #Fueron operados por United, American o Delta (CARRIER)primero se consulta la tabla de aerolineas para sacar las siglas de aerolinea
     '5.2.4-1.4'<-filter (nycflights13_vu, month==7| month==8 | month==9) #Salida en verano (julio, agosto y septiembre)
     '5.2.4-1.5'<-filter (nycflights13_vu, arr_delay > 2 & dep_delay <= 0)#Llegó más de dos horas tarde, pero no se fue tarde
     '5.2.4-1.6'<-filter (nycflights13_vu, dep_delay >= 1 & arr_delay <= 0.5)#Se retrasaron al menos una hora, pero recuperaron más de 30 minutos en vuelo
     '5.2.4-1.7'<-filter (nycflights13_vu, dep_time <= 600)#Salida entre la medianoche y las 6 a. m. (incluidas)
-
+    print (A
+           )
     #con operador between
     filter (nycflights13_vu,between( arr_delay , '2' ,'200'))## para vuelos retrasados entre 2 y 200 hrs
     filter (nycflights13_vu,between(dest , "IAH" , "HOU" ))# en este caso por el tipo de dato arrojara un error de coercion
@@ -32,9 +33,8 @@ x <- function(num)
 
     filter (nycflights13_vu, between( dep_delay, '1','100') & between (arr_delay,0, 0.5)) # mismas combinaciones para rangos de enteros
     filter (nycflights13_vu,between( dep_time , '0' , '600'))#podemos asumir que las 12 de la media noche son 00:00 y al ser enteros lo manejamos como 0
-
   }
-  if num == 2{
+  else if (x == 2){
     #5.3.1
     colnames(nycflights13_vu)
     '5.3.1.1'<- nycflights13_vu%>% #¿Cómo podría utilizar arrange()para ordenar todos los valores que faltan al principio? (Sugerencia: use is.na()).
@@ -52,7 +52,7 @@ x <- function(num)
       ungroup()
 
   }
-  if num == 3{
+  else if (x == 3){
     #5.4.1
 
     '5.4.1.2'<- nycflights13_vu%>%#¿Qué sucede si incluye el nombre de una variable varias veces en una select()llamada?
@@ -68,7 +68,7 @@ x <- function(num)
 
 
   }
-  if num == 4{
+ else if (x == 4){
     #5.5.2
     '5.5.2.1' <- nycflights13_vu%>% #Actualmente dep_time y sched_dep_time son convenientes a la vista, pero difíciles de calcular porque en realidad no son números continuos. Conviértalos a una representación más conveniente de la cantidad de minutos desde la medianoche.
       transmute(dep_time,sched_dep_time,dep_horas =(dep_time %/% 100), dep_minutos = (dep_time %% 100 ),sched_horas=(sched_dep_time%/% 100),sched_minutos = (sched_dep_time %% 100 ))#lo mas sencillo en este caso seria fraccionarlo en dos columnas para que sea legible
@@ -81,7 +81,7 @@ x <- function(num)
       arrange(arr_time)
 
   }
-  if num == 5{
+  else if (x == 5){
     #5.6.7
     #Haga una lluvia de ideas sobre al menos 5 formas diferentes de evaluar las características típicas de retraso de un grupo de vuelos. Considere los siguientes escenarios:
     #Un vuelo llega 15 minutos antes el 50% del tiempo y 15 minutos tarde el 50% del tiempo.
@@ -106,25 +106,25 @@ x <- function(num)
     #En esta ocasion podemos determinar que genera mas inconvenientes el retraso en la llegada, por que a partir de las tablas
     #podiamos determinar que muchos vuelos recuperaban tiempo en el aire, aumentando su velocidad, por ende al llegar tarde significa que desaprovecha la posibilidad de viajar a mas velocidad
   }
-  if num == 6{
+  else if (num == 6){
     #5.7.1 Vuelva a consultar las listas de funciones útiles de mutación y filtrado. Describe cómo cambia cada operación cuando la combinas con la agrupación.
     avion_retraso <- nycflights13_vu%>%
       arrange (flights,desc(dep_delay))%>%
       group_by(tailnum)
   }
-
 }
-  while (opcion == 'Entrar')
-  {
-    num <- readline(prompt = "ingrese un numero de punto")
-    num <- as.numberic (num)
-    retrieve_answer (x = num)
-      opcion <- readline ("continue?")
-    if (opcion=='Salir'){
-      'Gracias'
-    }
 
+while (opcion==1){
+  num <- readline(prompt = "ingrese un numero de punto")
+  num <- as.numeric (num)
+  retrieve_answer (x = num)
+  opcion <- readline ("continue?")
+  if (opcion==2){
+    print ('Gracias')
   }
+}
+
+
 
 
 
